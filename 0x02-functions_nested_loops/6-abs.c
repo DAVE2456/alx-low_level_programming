@@ -1,6 +1,4 @@
-
-  
-#include "holberton.h"
+  #include "holberton.h"
 
 /**
  * _abs - Computes the absolute value
@@ -21,3 +19,4 @@ int _abs(int i)
 		return (i * -1);
 	}
 }
+
