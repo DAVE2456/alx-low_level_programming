@@ -7,7 +7,7 @@
  *
  * Return: pointer to the function that corresponds to the operator.
  */
-int (*get_op_func(char *s))(int , int)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -18,6 +18,7 @@ int (*get_op_func(char *s))(int , int)
 		{NULL, NULL}
 	};
 	int i = 0;
+
 	while (i < 10)
 	{
 		if (s[0] == ops->op[i])
