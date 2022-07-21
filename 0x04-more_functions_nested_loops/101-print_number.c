@@ -1,2 +1,1 @@
-Hol^D
-:set binary noeol
+Hoel^D
