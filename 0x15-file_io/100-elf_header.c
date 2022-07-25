@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -243,4 +243,4 @@ int main(int argc, char *argv[])
 	close(fd);
 
 	return (0);
-
+}
