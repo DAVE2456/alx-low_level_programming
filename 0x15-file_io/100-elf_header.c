@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -17,7 +17,7 @@ void print_addr(char *ptr)
 	int begin;
 	char sys;
 
-	printf("  Entry point address:  0x");
+	printf("  Entry point address:               0x");
 
 	sys = ptr[4] + '0';
 	if (sys == '1')
@@ -65,7 +65,7 @@ void print_type(char *ptr)
 	else
 		type = ptr[17];
 
-	printf("  Type:  ");
+	printf("  Type:                              ");
 	if (type == 0)
 		printf("NONE (No file type)\n");
 	else if (type == 1)
