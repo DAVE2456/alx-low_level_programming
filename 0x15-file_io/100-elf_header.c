@@ -17,7 +17,7 @@ void print_addr(char *ptr)
 	int begin;
 	char sys;
 
-	printf("  Entry point address:               0x");
+	printf("  Entry point address: 0x");
 
 	sys = ptr[4] + '0';
 	if (sys == '1')
@@ -65,7 +65,7 @@ void print_type(char *ptr)
 	else
 		type = ptr[17];
 
-	printf("  Type:                              ");
+	printf("  Type: ");
 	if (type == 0)
 		printf("NONE (No file type)\n");
 	else if (type == 1)
@@ -89,7 +89,7 @@ void print_osabi(char *ptr)
 {
 	char osabi = ptr[7];
 
-	printf("  OS/ABI:                            ");
+	printf("  OS/ABI: ");
 	if (osabi == 0)
 		printf("UNIX - System V\n");
 	else if (osabi == 2)
@@ -99,7 +99,7 @@ void print_osabi(char *ptr)
 	else
 		printf("<unknown: %x>\n", osabi);
 
-	printf("  ABI Version:                       %d\n", ptr[8]);
+	printf("  ABI Version: %d\n", ptr[8]);
 }
 
 
@@ -112,7 +112,7 @@ void print_version(char *ptr)
 {
 	int version = ptr[6];
 
-	printf("  Version:                           %d", version);
+	printf("  Version: %d", version);
 
 	if (version == EV_CURRENT)
 		printf(" (current)");
@@ -128,7 +128,7 @@ void print_data(char *ptr)
 {
 	char data = ptr[5];
 
-	printf("  Data:                              2's complement");
+	printf("  Data: 2's complement");
 	if (data == 1)
 		printf(", little endian\n");
 
@@ -144,7 +144,7 @@ void print_magic(char *ptr)
 {
 	int bytes;
 
-	printf("  Magic:  ");
+	printf("  Magic: ");
 
 	for (bytes = 0; bytes < 16; bytes++)
 		printf(" %02x", ptr[bytes]);
@@ -169,10 +169,10 @@ void check_sys(char *ptr)
 	print_magic(ptr);
 
 	if (sys == '1')
-		printf("  Class:                             ELF32\n");
+		printf("  Class: ELF32\n");
 
 	if (sys == '2')
-		printf("  Class:                             ELF64\n");
+		printf("  Class: ELF64\n");
 
 	print_data(ptr);
 	print_version(ptr);
